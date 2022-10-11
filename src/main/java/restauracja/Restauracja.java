@@ -15,10 +15,15 @@ public class Restauracja {
     }
 
     public double pobierzCalkowityDochod(){
-        return 0;
+        double dochod = 0;
+        for (Stolik stolik : kelnerkiZeStolikami.values()) {
+            dochod += stolik.cenaZamowien;
+        }
+
+        return dochod;
     }
 
     public double pobierzDochodKelnerki(String imie) {
-        return 0;
+        return this.kelnerkiZeStolikami.get(new Kelnerka(imie)).cenaZamowien;
     }
 }
